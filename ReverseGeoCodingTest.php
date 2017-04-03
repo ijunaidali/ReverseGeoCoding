@@ -1,5 +1,6 @@
 <?php
-require __DIR__ . "/ReverseGeoCoding.php";
+include __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/ReverseGeoCoding.php';
 /**
  * Created by PhpStorm.
  * User: junai
@@ -16,26 +17,14 @@ class ReverseGeoCodingTest extends TestCase
      */
     public function itShouldConvertLatitudeAndLongitudeIntoAddress()
     {
-        /*$this->get('http://nominatim.openstreetmap.org/reverse?format=json&lat=52.5487429714954&lon=-1.81602098644987&zoom=10&addressdetails=1')->seeJsonStructure(
-            [
-                'place_id',
-                'licence',
-                'osm_type',
-                'osm_id',
-                'lat',
-                'lon',
-                'display_name',
-
-
-                ]
-            ]
-        );*/
-
-
-        $reverseGeoCoding = new ReverseGeoCoding();
+        $reverseGeoCoding = new ReverseGeoCoding('33.7294', '73.0931');
 
         $countryName = $reverseGeoCoding->getCountryName();
 
-        $this->assertEquals('United Kingdom', $countryName);
+        $cityName = $reverseGeoCoding->getcityName();
+
+        $this->assertEquals('Pakistan', $countryName);
+
+        $this->assertEquals('Islamabad', $cityName);
     }
 }
