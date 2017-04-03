@@ -69,6 +69,6 @@ class ReverseGeoCoding
 
         $this->setCityName($body->address->city);
 
-        $this->setCountryName($body->address->country);
+        $this->setCountryName($body->address->country_code);
     }
 }

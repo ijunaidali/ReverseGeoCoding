@@ -23,7 +23,7 @@ class ReverseGeoCodingTest extends TestCase
 
         $cityName = $reverseGeoCoding->getcityName();
 
-        $this->assertEquals('Pakistan', $countryName);
+        $this->assertEquals('pk', $countryName);
 
         $this->assertEquals('Islamabad', $cityName);
     }
