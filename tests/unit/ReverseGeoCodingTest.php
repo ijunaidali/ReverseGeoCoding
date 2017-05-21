@@ -1,15 +1,14 @@
 <?php
-include __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/ReverseGeoCoding.php';
-/**
- * Created by PhpStorm.
- * User: junai
- * Date: 4/4/2017
- * Time: 12:30 AM
- */
+
+namespace ReverseGeoCodingTest\Unit;
 
 use PHPUnit\Framework\TestCase;
+use ReverseGeoCoding\ReverseGeoCoding;
 
+/**
+ * Class ReverseGeoCodingTest
+ * @package ReverseGeoCodingTest\Unit
+ */
 class ReverseGeoCodingTest extends TestCase
 {
     /**

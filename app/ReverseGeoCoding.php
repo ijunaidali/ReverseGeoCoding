@@ -1,23 +1,40 @@
 <?php
+
+namespace ReverseGeoCoding;
+
 use GuzzleHttp\Client;
 
 /**
- * Created by PhpStorm.
- * User: junai
- * Date: 4/4/2017
- * Time: 1:05 AM
+ * Class ReverseGeoCoding
+ * @package ReverseGeoCoding
  */
-
 class ReverseGeoCoding
 {
+    /**
+     * @var
+     */
     private $lat;
 
+    /**
+     * @var
+     */
     private $lon;
 
+    /**
+     * @var
+     */
     private $countryName;
 
+    /**
+     * @var
+     */
     private $cityName;
 
+    /**
+     * ReverseGeoCoding constructor.
+     * @param $lat
+     * @param $lon
+     */
     public function __construct($lat, $lon)
     {
         $this->lat = $lat;
@@ -27,26 +44,41 @@ class ReverseGeoCoding
         $this->convertLatLongIntoAddress();
     }
 
+    /**
+     * @return mixed
+     */
     public function getCountryName()
     {
         return $this->countryName;
     }
 
+    /**
+     * @return mixed
+     */
     public function getCityName()
     {
         return $this->cityName;
     }
 
+    /**
+     * @param $name
+     */
     public function setCountryName($name)
     {
         $this->countryName = $name;
     }
 
+    /**
+     * @param $name
+     */
     public function setCityName($name)
     {
         $this->cityName = $name;
     }
 
+    /**
+     * convert latitude and longitude into address
+     */
     private function convertLatLongIntoAddress()
     {
         $config = [

@@ -1,8 +1,25 @@
 {
+    "name": "ijunaidali/ReverseGeoCoding",
+    "authors": [
+        {
+            "name": "Junaid Ali",
+            "email": "junaidali@email.com"
+        }
+    ],
     "require-dev": {
         "phpunit/phpunit": "5.7"
     },
     "require": {
         "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ReverseGeoCoding\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ReverseGeoCodingTest\\": "tests/"
+        }
     }
 }
